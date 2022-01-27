@@ -47,6 +47,12 @@ export default function ProductForm() {
 	function addProduct(e, product) {
 		e.preventDefault();
 		if (!validator(product)) {
+			setForm({
+				name: "",
+				description: "",
+				price: "",
+				image_url: "",
+			});
 			return setDisplayAlert("block");
 		} else {
 			dispatch(AddProduct(product));
